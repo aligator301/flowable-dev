@@ -1,0 +1,10 @@
+{
+  "LeftNav" : {
+    "Dashboard" : "Dashboard",
+    "Flows" : "Flows",
+    "DataStructures" : "Data Structures",
+    "DataValidation" : "Data Validation",
+    "DataTransformation" : "Data Transformation",
+    "SystemConnectors" : "Connectors"
+  }
+}

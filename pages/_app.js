@@ -1,12 +1,14 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import Head from 'next/head';
+import {NextIntlProvider} from 'next-intl';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { CacheProvider } from '@emotion/react';
+import Head from 'next/head';
+import {connect, Provider} from "react-redux";
+
 import theme from '../src/theme';
 import createEmotionCache from '../src/createEmotionCache';
-import {connect, Provider} from "react-redux";
 import {StateStore} from '../redux/store';
 import StateService from '../src/services/StateService';
 
@@ -32,13 +34,15 @@ const InternalApp = (props) => {
 };
 
 const MyApp = (props) => {
-    const { emotionCache = clientSideEmotionCache } = props;
+    const { emotionCache = clientSideEmotionCache, pageProps} = props;
     return (
-        <CacheProvider value={emotionCache}>
-            <Provider store={store}>
-                <InternalApp {...props}/>
-            </Provider>
-        </CacheProvider>
+        <NextIntlProvider messages={pageProps.messages}>
+            <CacheProvider value={emotionCache}>
+                <Provider store={store}>
+                    <InternalApp {...props}/>
+                </Provider>
+            </CacheProvider>
+        </NextIntlProvider>
     );
 }
 
