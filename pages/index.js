@@ -8,8 +8,7 @@ import Copyright from '../src/Copyright';
 
 export default function Index() {
   return (
-    <Container maxWidth="sm">
-      <Box sx={{ my: 4 }}>
+      <Box>
         <Typography variant="h4" component="h1" gutterBottom>
           Next.js example
         </Typography>
@@ -19,6 +18,5 @@ export default function Index() {
         <ProTip />
         <Copyright />
       </Box>
-    </Container>
   );
 }

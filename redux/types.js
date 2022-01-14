@@ -1,0 +1,3 @@
+module.exports = {
+    SET_FLOW_NAVIGATION_OPEN : "SET_FLOW_NAVIGATION_OPEN"
+};
